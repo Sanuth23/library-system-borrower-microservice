@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -45,7 +46,8 @@ public class BorrowerServiceImpl implements BorrowerService {
     }
 
     @Override
-    public Borrower getBorrowerById() {
-        return null;
+    public Borrower getBorrowerById(Long id) {
+        Optional<BorrowerEntity> byId = repository.findById(id);
+        return mapper.map(byId, Borrower.class);
     }
 }

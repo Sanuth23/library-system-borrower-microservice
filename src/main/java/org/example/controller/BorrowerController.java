@@ -36,4 +36,9 @@ public class BorrowerController {
                 ResponseEntity.notFound().build();
     }
 
+    @GetMapping("search/{id}")
+    public Borrower getBorrowerById(@PathVariable Long id){
+        return service.getBorrowerById(id);
+    }
+
 }

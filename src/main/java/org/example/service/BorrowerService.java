@@ -9,5 +9,5 @@ public interface BorrowerService {
     void addBorrower(Borrower borrower);
     List<BorrowerEntity> getBorrowers();
     boolean deleteBorrower(Long id);
-    Borrower getBorrowerById();
+    Borrower getBorrowerById(Long id);
 }
