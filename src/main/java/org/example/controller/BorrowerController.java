@@ -5,6 +5,7 @@ import org.example.dto.Borrower;
 import org.example.entity.BorrowerEntity;
 import org.example.service.BorrowerService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,13 @@ public class BorrowerController {
     @GetMapping("/get")
     public List<BorrowerEntity> getBorrowers(){
         return service.getBorrowers();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteBorrower(@PathVariable Long id){
+        return (service.deleteBorrower(id)) ?
+                ResponseEntity.ok("Borrower Deleted Successfully...") :
+                ResponseEntity.notFound().build();
     }
 
 }
