@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BorrowerService {
     void addBorrower(Borrower borrower);
-    List<BorrowerEntity> getBorrowers();
+    List<Borrower> getBorrowers();
     boolean deleteBorrower(Long id);
     Borrower getBorrowerById(Long id);
 }

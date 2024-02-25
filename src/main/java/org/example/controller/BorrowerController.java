@@ -25,7 +25,7 @@ public class BorrowerController {
     }
 
     @GetMapping("/get")
-    public List<BorrowerEntity> getBorrowers(){
+    public List<Borrower> getBorrowers(){
         return service.getBorrowers();
     }
 

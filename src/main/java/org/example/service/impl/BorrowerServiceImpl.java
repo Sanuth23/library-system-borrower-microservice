@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,8 +33,14 @@ public class BorrowerServiceImpl implements BorrowerService {
     }
 
     @Override
-    public List<BorrowerEntity> getBorrowers() {
-        return repository.findAll();
+    public List<Borrower> getBorrowers() {
+        List<Borrower> borrowerList = new ArrayList<>();
+        List<BorrowerEntity> entityList = repository.findAll();
+        for (BorrowerEntity entity:entityList) {
+            Borrower borrower = mapper.map(entity, Borrower.class);
+            borrowerList.add(borrower);
+        }
+        return borrowerList;
     }
 
     @Override
