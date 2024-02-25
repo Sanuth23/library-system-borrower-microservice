@@ -32,7 +32,7 @@ public class BorrowerServiceImpl implements BorrowerService {
 
     @Override
     public List<BorrowerEntity> getBorrowers() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
