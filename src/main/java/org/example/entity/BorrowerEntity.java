@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "Book")
+@Table(name = "Borrower")
 public class BorrowerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,7 @@ public class BorrowerEntity {
     private String contactNumber;
     private String nic;
     private String email;
+    private String address;
     private String country;
     private String username;
     private String password;

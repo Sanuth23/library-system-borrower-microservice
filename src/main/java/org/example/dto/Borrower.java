@@ -13,6 +13,7 @@ public class Borrower {
     private String contactNumber;
     private String nic;
     private String email;
+    private String address;
     private String country;
     private String username;
     private String password;
